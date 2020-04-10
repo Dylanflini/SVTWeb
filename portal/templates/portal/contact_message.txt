@@ -1,0 +1,12 @@
+Has recibido un mensaje para solicitar información sobre el portal anti covid-19 de:
+
+{{ user }}
+
+ Esto es lo que escribió:
+
+ {{ message }}
+
+ Datos de contacto:
+
+ {{ email }}
+ {{ phone }}

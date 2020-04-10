@@ -1,0 +1,108 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Instalador electrico</title>
+    <!-- MDB icon -->
+    <link rel="icon" href="{% static 'img/svtlogo.png'%}" type="image/x-icon">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+    <!-- Material Design Bootstrap -->
+    <link rel="stylesheet" href="{%static 'css/mdb.min.css'%}">
+    <!-- Your custom styles (optional) -->
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+            <a class="navbar-brand" href="#"><img class="logo img-fluid" src="{% static 'img/svtlogo.png' %}" alt="Responsive image"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse barraNav" id="navbarSupportedContent">
+                <ul class="barraNav navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" id="botonNavInicio" href="#inicio">Inicio <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="botonAboutUs" href="#aboutUs">Sobre Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="botonNavContacto" href="#contacto">Contacto</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav nav-flex-icons">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.instagram.com/instalador.autorizadosec/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.facebook.com/InstaladorElectricoSecA/" target="_blank"><i class="fab fa-facebook"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="view intro-2" id="inicio">
+            <div class="full-bg-img">
+                <div class="mask rgba-black-light flex-center">
+                    <div class="container text-center white-text">
+                        <div class="white-text text-center">
+                            <h2>Portal Anti Covid-19</h2>
+                            <h5>It will always stay visible on the top, even when you scroll down</h5>
+                            <br>
+                            <a class="saberMas btn btn-black btn-md ml-0" href="#aboutUs" role="button">Quiero saber más<i class="fa fa-brain ml-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    {% block content %} 
+    {% endblock %}
+    <!-- Footer -->
+    <footer class="datosFooter page-footer font-small">
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+            <a href="·"> pagina.com</a>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+
+    <!-- jQuery -->  
+    <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="{%static 'js/popper.min.js' %}"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="{% static 'js/bootstrap.min.js'%}"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="{% static 'js/mdb.min.js'%}" ></script>
+    <!-- Your custom scripts (optional) -->
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>-->
+
+    <script src="{% static 'js/desplazamiento.js'%}"></script>
+    <script src="{% static 'js/cerrarMenu.js'%}"></script>
+    <script src="{% static 'js/validacionContacto.js'%}"></script>
+
+
+
+
+
+</body>
+
+</html>

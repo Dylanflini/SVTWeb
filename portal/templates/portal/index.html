@@ -1,0 +1,129 @@
+{% extends 'portal/base.html' %}
+{% load staticfiles %}
+{% block content %}
+<div class="container my-5 py-5 wow fadeInUp" id="aboutUs">
+
+        <!--Section: Content-->
+        <section class="px-md-5 mx-md-5 text-center text-lg-left dark-grey-text">
+
+            <!--Grid row-->
+            <div class="row">
+
+                <!--Grid column-->
+                <div class="col-md-6 mb-4 mb-md-0">
+
+                    <h3 class="font-weight-bold">Lorem, ipsum dolor sit amet consectetur</h3>
+
+                    <p class="text-muted-responsive">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id quam sapiente molestiae numquam quas, voluptates omnis nulla ea odio quia similique corrupti magnam, doloremque laborum.</p>
+
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-md-6 mb-4 mb-md-0">
+
+                    <!--Image-->
+                    <div class="view overlay z-depth-1-half">
+                        <img src="{%static 'img/portal3.jpg'%}" class="img-fluid" alt="">
+                    </div>
+
+                </div>
+                <!--Grid column-->
+
+            </div>
+            <!--Grid row-->
+
+
+        </section>
+        <!--Section: Content-->
+
+
+    </div>
+
+    <!--Section contacto-->
+    <div class="contacto container py-5 wow fadeInUp" id="contacto">
+        <!--Section: Content-->
+        <section class="px-md-5 mx-md-5 white-text text-center text-lg-left">
+
+            <!--Grid row-->
+            <div class="row">
+
+                <!--Grid column-->
+                <div class="col-lg-6 mb-4 mb-lg-0 d-flex align-items-center justify-content-center">
+
+                    <!-- Material form contact -->
+                    <div class="card">
+
+                        <h5 class="card-header black-text text-center py-4">
+                            <strong>Contáctanos!</strong>
+                        </h5>
+
+                        <!--Card content-->
+                        <div class="card-body px-lg-5 pt-0">
+                        
+                            <!-- Form -->
+                            <form method="POST" id="miFormulario" class="text-center needs-validation" novalidate style="color: #757575;" action="{% url 'index'%}">
+                                {% csrf_token %} 
+                                <!-- Name -->
+                                <div class="md-form mt-3">
+                                    <input type="text" id="materialContactFormName" name="nombre" class="form-control" required>
+                                    <label for="materialContactFormName">Nombre</label>
+                                </div>
+
+                                <!-- E-mail -->
+                                <div class="md-form">
+                                    <input type="email" id="materialContactFormEmail" name="mail" class="form-control" required>
+                                    <label for="materialContactFormEmail">E-mail</label>
+                                </div>
+                                <!-- Telefono -->
+                                <div class="md-form">
+                                    <input type="number" id="materialContactFormPhone" name="fono" class="form-control" min="100000000" max="999999999" required>
+                                    <label for="materialRegisterFormPhone">Telefono ej: 944256654</label>
+                                </div>
+                                <!--Message-->
+                                <div class="md-form">
+                                    <textarea id="materialContactFormMessage" name="mensaje" class="form-control md-textarea" rows="3" required></textarea>
+                                    <label for="materialContactFormMessage">Mensaje</label>
+                                </div>
+
+                                <!-- Copy -->
+                                <div class="form-check">
+                                    <input type="checkbox" name="copia" class="form-check-input" id="materialContactFormCopy">
+                                    <label class="form-check-label" for="materialContactFormCopy">Enviame una copia de este mensaje.</label>
+                                </div>
+
+                                <!-- Send button -->
+                                <button class="btnEnviar btn btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">Enviar</button>
+
+                            </form>
+                            <!-- Form -->
+
+                        </div>
+
+                    </div>
+                    <!-- Material form contact -->
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-lg-6 mb-4 mb-lg-0">
+
+                    <h3 class="font-weight-bold">Call to action</h3>
+
+                    <p class="font-weight-bold">That's a very nice subheading</p>
+
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id quam sapiente molestiae numquam quas, voluptates omnis nulla ea odio quia similique corrupti magnam, doloremque laborum.</p>
+
+                </div>
+                <!--Grid column-->
+
+            </div>
+            <!--Grid row-->
+
+
+        </section>
+        <!--Section: Content-->
+
+
+    </div>
+    {% endblock %}
