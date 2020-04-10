@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.core.mail import send_mail, EmailMultiAlternatives
-from .models import posibleClient
+from .models import posibleCliente
 from django.template.loader import get_template
 from django.conf import settings
 from django.template.loader import render_to_string
