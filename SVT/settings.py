@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '!e^-js0zp4@0*$rv4f@)qlfn6!#gs%9pff*3hxhw#wl43l=o%w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -48,6 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middeware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'SVT.urls'
@@ -74,15 +75,13 @@ WSGI_APPLICATION = 'SVT.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+import dj_database_url
+from decouple import config
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'svt_portal',
-        'USER': 'postgres',
-        'PASSWORD': 'consolAog0',
-        'HOST': 'LOCALHOST',
-        'PORT': '',
-    }
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL')
+    )
 }
 
 
@@ -125,8 +124,17 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'), 
+)
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'olml12354@gmail.com'    
 EMAIL_HOST_PASSWORD = 'quillota23'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
+
+
